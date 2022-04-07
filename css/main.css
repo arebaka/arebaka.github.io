@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+body {
+	font: 16px Lato, sans-serif;
+	line-height: 1.5em;
+	color: #FFF;
+	background: url('../images/floor.jpg') no-repeat fixed  center top;
+}
+
+a {
+	color: #FFF;
+	transition: all .1s linear;
+}
+a:hover,
+a:focus,
+a:active {
+	color: #7D80B8;
+}
+
+#container {
+	margin: 30px auto;
+	padding: 30px 20px;
+	max-width: 1080px;
+	background: #0008;
+	border: 1px solid #FFF;
+	border-radius: 0 0 5px 5px;
+}
+
+#profile {
+	overflow: hidden;
+}
+#profile .avatar {
+	margin-right: 20px;
+	float: left;
+	width: 175px;
+	height: 175px;
+	border-bottom-right-radius: 70% 50%;
+}
+#profile .name {
+	font: bold 2.5em/1.5 Roboto, sans-serif;
+	text-align: left;
+}
+#profile .job {
+	font: bold 1.5em/1.5 Roboto, sans-serif;
+}
+#profile .linkbar {
+	list-style: none outside none;
+	display: block;
+	margin: 1em 0;
+	overflow: hidden;
+}
+#profile .linkbar li {
+	display: block;
+	float: left;
+}
+#profile .linkbar a {
+	display: block;
+	margin-bottom: .5em;
+	margin-right: 1em;
+	font: .9em/2.5 Lato, sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: 1px solid #FFF;
+	border-left: none;
+	border-right: none;
+}
+#profile .linkbar a:hover,
+#profile .linkbar a:focus,
+#profile .linkbar a:active {
+	color: #7D80B8;
+	border-color: #7D80B8;
+}
+
+.section {
+	clear: both;
+	margin: 2em 0;
+}
+.section h1 {
+	font: bold 1.5em/1.5 Roboto, sans-serif;
+	text-align: left;
+	border-bottom: 1px dotted #FFF;
+}
+.section p {
+	margin: 1em 0;
+}
+.section .linkbar {
+	list-style: none outside none;
+	display: block;
+	border-left: 1px solid #FFF;
+}
+.section .linkbar li {
+	display: block;
+	padding: 0 1em;
+	width: 100%;
+	line-height: 2em;
+}
+
+.meters {
+	list-style: none outside none;
+	display: block;
+	overflow: hidden;
+}
+.meters li {
+	display: block;
+	margin-top: 1em;
+	border: 1px solid #FFF;
+	border-radius: .5em;
+	overflow: hidden;
+}
+.meters li div {
+	padding: 0 .5em;
+	font: bold 1em/1.5 Lato, sans-serif;
+	white-space: nowrap;
+	color: #FFF;
+	background: #7D80B8;
+	overflow: visible;
+}
+
+.list {
+	list-style: none outside none;
+	display: block;
+	overflow: hidden;
+}
+.list li {
+	display: block;
+	float: left;
+	margin: 1em 1em 0 0;
+}
+
+.badge {
+	display: block;
+	padding: 0 .5em;
+	font: bold 1em/1.5 Lato, sans-serif;
+	color: #FFF;
+	background-color: #7D80B8;
+	white-space: nowrap;
+	border-radius: .5em;
+	overflow: hidden;
+}
+.badge .value {
+	display: inline-block;
+	margin: 0 -.5em 0 .5em;
+	padding: 0 .5em;
+	color: #7D80B8;
+	background: #FFF;
+}
+
+.experience {
+	list-style: none outside none;
+	display: block;
+	overflow: hidden;
+}
+.experience li {
+	position: relative;
+	display: block;
+	margin: 1em 0;
+	border-bottom: 1px solid #FFF;
+}
+.experience .offtop {
+	color: #888;
+}
+.experience .what {
+	float: left;
+	font: bold 1em/2 Roboto, sans-serif;
+	text-align: left;
+}
+.experience .date {
+	float: right;
+	margin: 0 0 0 1em;
+	font: italic 1em/2 Lato, sans-serif;
+}
+.experience .who {
+	clear: both;
+	margin: 0;
+	font: normal 1em/2 Lato, sans-serif;
+}
+.experience .details {
+	clear: both;
+	margin: 0;
+	padding: .5em;
+	font: 1em/1.5 Lato, sans-serif;
+	border-left: 1px solid #FFF;
+}
+
+#contacts {
+	overflow: hidden;
+}
+.contact {
+	float: left;
+	width: 33.33%;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+.contact .label {
+	font: bold 1em/1 Roboto, sans-serif;
+}
+.contact .label a {
+	text-decoration: none;
+}
+.contact .value {
+	font: .8em/1.5 Lato, sans-serif;
+}
+
+@media screen and (max-width: 1080px) {
+	#container {
+		max-width: none;
+		margin: 0;
+		border: none;
+	}
+}
