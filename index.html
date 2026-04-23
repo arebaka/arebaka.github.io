@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>kekv</title>
+    <style>
+        body { background: #000; color: #fff; font-family: monospace; display: flex; flex-direction: column; align-items: center; padding: 50px; }
+        canvas { background: #000; border-radius: 50%; }
+        .container { width: 100%; display: flex; flex-direction: column; gap: 50px; }
+        .strip { width: 100%; border: 5px solid #fff; height: 50px; }
+        .circle-wrap { display: flex; justify-content: space-around; align-items: center; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <div class="strip" style="background: linear-gradient(
+            to right in oklch longer hue,
+            oklch(0.62 0.084   0)   0%,
+            oklch(0.62 0.084 360) 100%
+        )"></div>
+        <div class="circle-wrap" style="margin-top: 50px;">
+            <canvas id="c1" width="400" height="400"></canvas>
+            <canvas id="c1r" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <div>
+        <div class="strip" style="background: linear-gradient(
+            to right in oklch longer hue,
+            oklch(0.68 0.102   0)   0%,
+            oklch(0.68 0.102 360) 100%
+        );"></div>
+        <div class="circle-wrap" style="margin-top: 50px;">
+            <canvas id="c2" width="400" height="400"></canvas>
+            <canvas id="c2r" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    function draw(id, chroma, reverse = false) {
+        const c = document.getElementById(id);
+        const ctx = c.getContext('2d');
+        const r = c.width / 2;
+
+        for (let y = 0; y < c.height; y++) {
+            for (let x = 0; x < c.width; x++) {
+                const dx = x - r;
+                const dy = y - r;
+                const d = Math.sqrt(dx*dx + dy*dy);
+                
+                if (d <= r) {
+                    const hue = (Math.atan2(dy, dx) * 180 / Math.PI + 360) % 360;
+                    let lightness = d / r;
+                    if (reverse) {
+                        lightness = 1 - lightness;
+                    }
+                    ctx.fillStyle = `oklch(${lightness} ${chroma} ${hue})`;
+                    ctx.fillRect(x, y, 1, 1);
+                }
+            }
+        }
+    }
+    draw('c1', 0.084);
+    draw('c1r', 0.084, true);
+    draw('c2', 0.084);
+    draw('c2r', 0.102, true);
+</script>
+
+</body>
+</html>
